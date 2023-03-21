@@ -1,6 +1,7 @@
 from mido import MidiFile, second2tick, MetaMessage, Message, MidiTrack, merge_tracks
 import torch
 import os
+import pickle
 
 DATA_DIR = "./data"
 TEST_FILE = DATA_DIR + "/albeniz/alb_esp1.mid"
@@ -135,11 +136,11 @@ if __name__ == '__main__':
   # print(len(measures))
   # print(midi_file)
 
-  data, all_notes, time = parse_music_file(TEST_FILE)
-  print(time)
-  create_midi_file('new_midi_file.mid', all_notes)
-  for i, notes in enumerate(data):
-    create_midi_file(f'./tmp/new_midi_file_{i}.mid', notes)
+  # data, all_notes, time = parse_music_file(TEST_FILE)
+  # print(time)
+  # create_midi_file('new_midi_file.mid', all_notes)
+  # for i, notes in enumerate(data):
+  #   create_midi_file(f'./tmp/new_midi_file_{i}.mid', notes)
   
   # print(sum([msg[1] for msg in midi_file]))
   sequences, total_time, total_songs = parse_directory("./data/")
@@ -149,4 +150,6 @@ if __name__ == '__main__':
 
   generator1 = torch.Generator().manual_seed(42)
   split_data  = torch.utils.data.random_split(sequences, [0.6, 0.2, 0.2], generator=generator1)
+  with open('data.pickle', 'wb') as f:
+    pickle.dump(split_data, f)
   print(split_data)
