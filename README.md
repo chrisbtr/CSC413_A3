@@ -8,6 +8,18 @@
 # Introduction
 Brad
 
+# How to run our model
+1. Download the data from https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi, run it through our `data_parser.py` functions by doing the following, to store each of the training, test, and validation sets in a file called `data.pickle` in the root of this directory.
+
+    1. Sub steps here***
+    2. more steps
+2. Once `data.pickle` in the root of this directory, update file paths tagged as `#UPDATE` in the `model_and_training.ipynb` files. Once done to train the model run please run all the cells up to and including the cell with the `training function` as well as the cell towards thee bottom with the `smaple function` deefintion in it under the **Generate music** section before calling `train()`.
+3. Now that everything needed has been run you may run the cell that trains the model. this cell is below the cell that defines `train()` and the functions `train()` uses. If you want to switch up the parameters trained with feel free to look at the docstring of the `train()` function. Alternatively, you can use the proivded wieghts in `report-weights.pk` to preload the model with, you can find the cell to do this below the cell where `train()` is called, in the **training section**. 
+4. Now that the model is trained up you can head to the **Sample music** section and begin creating songs there is a cell that will do this beelow the cell where `sample()` is deefined, please read thee docsting for how to use this function.
+5. Make music doing this for as long as you, enjoy! At the bottom of this file you will find our functions for computing results, you may use these if you would like to compute your models results if you train your own.
+
+*NOTE IF the instruction order on how to run the ceells is confusing they have text cells above them explaining the order to run theem in*
+
 # Model
 In this section we will analyze how our model functions for its two use cases and explain how it works to generate music sequences in each case.
 
@@ -37,13 +49,19 @@ Here we analyze the parameters that make up the model. To do this we will go lay
 # Data
 Chris 
 - be sure to explain why we used certain data split
+- mention the graphs are loss for each batch, not an average.
 
 # Training
 chris
 
 # Results
-Jackson
-- how we measure loss and accuracy
+In this section we will explain how we quantified our results, what results we obtained, and why we obtained the results we got. To begin we will first explain how we measured our results both quantitatively and qualitatively. To measure our results quantitavitvely we found this challenging as we were our model was generative meaning it should produce output it had never, and none of us were really fimilar with how to quantitaively measure this. We ended up deciding on two types of measures.
+
+&nbsp; Firstly the "loss", the loss is computed as the sum of three different loss components computed on each part of the output token. We calcualte a loss on the pitch using logistic cross entory since this is a categorical prediction the model is making and we calculate a MSE loss on both the step and duration components respectivley. We compute the loss in a similar style to teacher forcing where the we use the next actual token compared to the one generated for that time step by the model, moreover we don't let the loss accumulate from mispredictions since at each time step we enter in the correct token as input no matter what, just like in teacher forcing. To get the full loss value we averaged the loss over all the samples in each set respectively these results can be seen below.
+
+&nbsp; The second measure we choose to gauge results was an accuacy measure comparing the genearted distrubtion of notes with the distributions in the given data sets, we used the follwong source "Techniques to measure probabilty distribution similarity" by Renu Khandelwal to build a understand of how to compute the similarity of distributions [1]. Our idea here was to compare the distribution of generated notes pitch, the distribution of generated notes step, and the distribution of generated notes duration with the distubtion of each these compontents of the notees in the both the training and validation set during training, and the testing set once we chose a model to go with. We chose to do this as we figured the more accurate our model would the be the better/closer its produced distribtioon of notes would follow the distribtuion in the data set. The measure we choose to compare these distribtuins is the Jensen Shannon Divergence(JSD), we choose to go with this measure of similarity as it is bounded between 0 and 1. The closer the JSD value is to 0 the more similar the distribtuions are and the the closer to 1 the more divergent they are. To compute these values we genertated histograms as used these as the probability distribtuions. We made histograms for each of the components, i.e. the pitch, step and duration deescribed above and built them by using 50 smaples generated from the model of length X and used JSD to compare these against the histograms made on each set of the data. We only went with 50 samples as the distribtuions are normalized thus we dont need to sample/generate the same amount of data as what is in each set to get an accurate distribtuion. JSD is built on top of Kullback–Leibler Divergence or KL divergence. JSD is thee symetric version of KL divergence and is used to measure similarity of the distribtuions by quantifing the information lost when using one distribtuion over anther. to see how it is computed pleease see the functions `_kullback_leiber_divergence()` and `janseen_divergence()` in `model_and_training.ipynb` under the training section, they are in this section as we used them to gaugee accuaracy during training. The rest of our code to compute results can be found under the results section.
+
+[1] "Techniques to measure probabilty distribution similarity" by Renu Khandelwal https://medium.com/geekculture/techniques-to-measure-probability-distribution-similarity-9145678d68a6
 
 # Ethical Considerations
 Brad
