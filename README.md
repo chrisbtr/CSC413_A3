@@ -70,8 +70,11 @@ chris
 
 ## Results Discussion
 
+After having trained many many models and listened to their outputs, we believed the one we settled on perfromed reasonably and as good as we could achieve given the difficulty of the problem. wee expereinced in training many models that did X, y , or Z. this model we settled with we found best due to these reasons .... . Some issues we still found with this model are ... . Going forward we could try and do x, y, z, transformer. 
+
 # Ethical Considerations
 Brad
+- metnion overfit models exact clonning 
 
 
 # Authors
