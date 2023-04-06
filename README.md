@@ -112,10 +112,10 @@ Our dataset is split into `train` (60%), `validation` (20%), and `test` (20%) su
 chris
 
 ## The Training Leaning Curve
-<img src="./train%20loss%20plot.png"  width="30%" height="30%">
+<img src="./ReadMe-Media/train%20loss%20plot.png"  width="30%" height="30%">
 
 ## The Validation Leaning Curve
-<img src="./valid%20loss%20plot.png"  width="30%" height="30%">
+<img src="./ReadMe-Media/valid%20loss%20plot.png"  width="30%" height="30%">
 
 **NOTE:** The above graphs are showing loss for each batch, not an average as we found this made it easier to read.
 
