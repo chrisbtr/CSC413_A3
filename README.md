@@ -146,3 +146,7 @@ Another ethical consideration is that the model can negatively effect individual
 |------|---------|--------------------|
 | Project discussion and proposal rough draft | All  | All members got together. The project idea was formulated, researched, and the data required was found. The tasks for each member to work on the proposal was decided
 | Finish and submit Proposal | All | All members got together via zoom to finish the project proposal and submit it on markus
+| Repository Setup | Chris | The repository was created and setup on Github. Other members were added 
+| Code and model setup | All | All members got together and began to develop the model. This was done on through pair programming on google colab
+| Write data parser | Chris | Write data parser for parsing dataset to something computable by the model
+|   |   |
