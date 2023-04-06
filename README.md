@@ -11,15 +11,15 @@ Brad
 # How to run our model
 1. Download the data from https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi, run it through our `data_parser.py` functions by doing the below. Make sure to store each of the training, test, and validation sets in a file called `data.pickle` in the root of this directory.
     1. Sub steps here***
-    2. more steps
+    2. more steps TODO CHRIS add in how to use DATA
 2. Once `data.pickle` has been made and stored in the root of this directory, update file paths tagged as `# UPDATE` in the `model_and_training.ipynb` file by following the comments near them in the code. Once this is done, to train the model run please run all the cells up to and including the cell with the `train()` function and the cell towards the bottom of the file with the `sample_sequence()` function definition in it. This cell is the first one under the **Sampling/Producing music** section.
 3. Now that everything needed has been run, you may run the cell that trains the model and calls the `train()` function. This cell is below the cell that defines the `train()` function as well as the other functions used by `train()`. If you want to switch up the parameters to train with feel free to look at the doc-string of the `train()` function. The ones currently in this cell are the ones we used to define and train the final model, so the output saved here was our final models output. Note, that though these training statements have accuracy scores as low percents this is a good thing based on how we defined accuracy, see the results section below for more. Alternatively, you can use the provided weights in `report-weights.pk` to preload the model with, you can find the cell to do this below the cell where `train()` is called, in the **Training** section. 
 4. Now that the model is trained up or loaded with weights you can head to the **Sampling/Producing music** section and begin creating songs. There is a cell that shows an example call of how to do this below the cell where `sample_sequence()` is defined, please read the doc-string for how to use this function, if you are unsure.
 5. Make music doing this for as long as you want, enjoy! At the bottom of this file you will find our functions for computing results under the aptly named **Result Computations** section, you may use these if you would like to compute your models results if you happened to have trained your own model.
 
-*NOTE One: If the instruction order on how to run the cells is confusing they have text cells above them explaining the order to run them in as guidance*
+**NOTE One: If the instruction order on how to run the cells is confusing they have text cells above them explaining the order to run them in as guidance**
 
-*NOTE Two: the `device` variable is used throughout the code, please ensure this variable has been defined before calling any functions as otherwise they may error.*
+**NOTE Two: the `device` variable is used throughout the code, please ensure this variable has been defined before calling any functions as otherwise they may error.**
 
 # Model
 &nbsp; &nbsp; In this section we will analyze how our model functions for its two use cases and explain how it works to generate music sequences in each case. We analyze only the final version of the model we settled on in this report.
@@ -173,7 +173,10 @@ temperatures, different lengths, and with different input sequeencees from diffe
 
 ## Results Discussion
 
-After having trained many many models and listened to their outputs, we believed the one we settled on perfromed reasonably and as good as we could achieve given the difficulty of the problem. wee expereinced in training many models that did X, y , or Z. this model we settled with we found best due to these reasons .... . Some issues we still found with this model are ... . Going forward we could try and do x, y, z, transformer. 
+&nbsp; &nbsp; After having trained many many models and listened to their outputs and observed their quantitative result scores, we believe the model we settled on performed reasonably given the task at hand and as good as we could achieve given the difficulty of the problem, that . In coming up with this final model we tried many different approahces and had many different results.
+
+
+we expereinced in training many models that did X, y , or Z. this model we settled with we found best due to these reasons .... . Some issues we still found with this model are ... . Going forward we could try and do x, y, z, transformer. 
 
 # Ethical Considerations
 Brad
