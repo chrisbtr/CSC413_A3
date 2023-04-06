@@ -6,7 +6,7 @@
 - **Bradley Davis Hebert**
 
 # Introduction
-We designed a Neural Network model to create new and original musical compositions. The motivation behind this project is to create a model with real world applications. The need and desire for original musical compositions is everlasting and the use for a music generating model is extremely practical. The ability to quickly generate royalty free music opens new opportunities for companies, advertisers, and creative artists alike. \
+We designed a Deep Neural Network model to create new and original musical compositions. The motivation behind this project is to create a model with real world applications. The need and desire for original musical compositions is everlasting and the use for a music generating model is extremely practical. The ability to quickly generate royalty free music opens new opportunities for companies, advertisers, and creative artists alike. \
 Such a task is very ambitious and requires many considerations both developmental and ethical, which we will be explored throughout this report.
 
 
@@ -216,7 +216,15 @@ Another ethical consideration is that the model can negatively effect individual
 |------|---------|--------------------|
 | Project discussion and proposal rough draft | All  | All members got together. The project idea was formulated, researched, and the data required was found. The tasks for each member to work on the proposal was decided
 | Finish and submit Proposal | All | All members got together via zoom to finish the project proposal and submit it on markus
-| Repository Setup | Chris | The repository was created and setup on Github. Other members were added 
+| Repository Setup | Chris | The repository was created and setup on Github. Other members were added
 | Code and model setup | All | All members got together and began to develop the model. This was done on through pair programming on google colab
 | Write data parser | Chris | Write data parser for parsing dataset to something computable by the model
-|   |   |
+| First training session of the model | All  | We all got together and coded up the first model and training and sampling functions. The results were quite noisy and on our first attempt to overfit we could get the loss down but could not get the model to overfit properly and produce one sample. We had also trained on all the data and had gotten the model to make noisy results, so we were going to further investigate our model and results
+| Tweaking and testing for errors in model | Jackson | tried various things with out model, realized there was an error in computing loss, and this is why we could not overfit a sample. Fixed the issue so the model could overfit perfectly on sample. Experimented with a few other model designs, found one that worked well on a little portion of data
+| Further Training and Experimenting | Brad | Worked on training the model on a slew of various hyperparameters and model configurations. Including aspects like number of layers, batch size, training size, and number of epochs. Analyzing causes of overfitting and and underfitting
+| Data experimenting | Chris | Experimented on how using different segment sizes, data splits, and data transformations affected the results of the trained model. 
+| Deciding upon a final model and more train | All | Finalizing the model, deciding which hyperparameters worked best. Training the model and recording output graphs, performance, loss, and the music it was able to generate. Also, the dividing up of the final report so we could all start individually 
+| Training and analyzing experimental model | Brad | Developed and trained a different model than our decided upon one to see if a different, but similar, approach would improve the model. Analyzed performance of this extra model to our chosen one and found our chosen one performed better in general
+| Report write up | All (individual) | Jackson worked on the Results and model section, cleaned the code and added docstrings. Brad wrote the introduction and ethical sections, Chris wrote training and data sections
+| Report revision | All | Everyone worked together to review and edit the readme made sure everything was working order with the code, and submitted
+
