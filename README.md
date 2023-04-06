@@ -208,9 +208,6 @@ The first of such considerations is what can we constitute as "new" music. What 
 Another ethical consideration is that the model can negatively effect individuals that rely on a career in creating music. Suppose an advertising agent that outsources music to freelance music artists no longer needs to use such artists as they can now use an open source music generation model to generate music for their ads. Now, the company saves money, but the artists are receiving less work now. This can extend to fully contracted artists, will they lose their job? Will the need for commercial musical artists go away with the introduction of music generating models into the main stream? This is an ethical consideration that is extremely important as it directly impacts the livelihood of any people in society.   
 
 # Authors
--  Jackson J. Hoogenboom (hoogenb2) 
--  Bradley D. Hebert (hebertbr)
--  Chris Botros (botrosc2)
 
 | Task | Members | What was completed |
 |------|---------|--------------------|
