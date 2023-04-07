@@ -140,10 +140,10 @@ Using these we turned the data in the midi files from the dataset into the tenso
 ## Hyper-parameters Tuning
 The hyper-parameters we settled on after many training runs that we ended up using for this model are:
 - `num_epochs=50`
-  - The reason we used 50 epochs is due to the fact we found that if we went higher this model would start to over fit to the training dataset and the loss would grow on the validation set. 
+  - The reason we used 50 epochs is due to the fact we found that if we went higher this model would start to over fit to the training dataset and the loss would grow quite high on the validation set. 
 - `batch_size=128`
-  - We choose a batch size of 128 since we found that this size would not only allow the training to run faster but also allowed us to get slightly improved results for our validation loss, since it happened to find a better minima due to stochastic. Other batch_sizes that we larger caused either a slower descent and higher ones were rather noisy in their descent making settling to one minima hard.
-- The other parameters were left as the default values specified in our training function.
+  - We choose a batch size of 128 since we found that this size would not only allow the training to run faster but also allowed us to get slightly improved results for our validation loss, since it happened to find a better minima due to stochasticity. Other batch_sizes that were larger caused a slower descent and higher ones were rather noisy in their descent making settling to one minima hard.
+- The other parameters were left as the default values specified in our training function, we found we never really needed weight decay or to adjust the learning rate as it seemed to sufficiently fast, and we ended up using early stopping to prevent overfitting instead.
 
 
 
