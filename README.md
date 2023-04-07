@@ -172,18 +172,18 @@ In this section we will look at the actual results obtained by our model, both q
 
 | Measure Name| Score | Notes |
 |-------------|-------|-------|
-| Avg. Training set loss | 3.766218465153977 | The closer to 0 this is the better. This is the loss value averaged over all examples in the training set.
-| Avg. Validation set loss | 3.4298499607564668 | The closer to 0 this is the better. This is the loss value averaged over all examples in the validation set.
-| Avg. Testing set loss | 3.5306541454563356 |The closer to 0 this is the better. This is the loss value averaged over all examples in the testing set.
-| Training set pitch accuracy/JSD value | 0.12274975090742343 | This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated pitches distribution similarity to training set pitch distribution.
+| Avg. Training set loss | 3.7662184621542187 | The closer to 0 this is the better. This is the loss value averaged over all examples in the training set.
+| Avg. Validation set loss | 3.429849933226228 | The closer to 0 this is the better. This is the loss value averaged over all examples in the validation set.
+| Avg. Testing set loss | 3.530654111050861 |The closer to 0 this is the better. This is the loss value averaged over all examples in the testing set.
+| Training set pitch accuracy/JSD value | 0.12059951319509923 | This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated pitches distribution similarity to training set pitch distribution.
 | Training set step accuracy/JSD value | 0.03802543272082731 | This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated step distribution similarity to training set step distribution.
-| Training set duration accuracy/JSD value |  0.03296698056417996 | This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated duration distribution similarity to training set duration distribution.
-| Validation set pitch accuracy/JSD value | 0.1352644083608216 |This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated pitches distribution similarity to validation set pitch distribution.
+| Training set duration accuracy/JSD value | 0.030867244654428312 | This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated duration distribution similarity to training set duration distribution.
+| Validation set pitch accuracy/JSD value | 0.1514962046801699 |This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated pitches distribution similarity to validation set pitch distribution.
 | Validation set step accuracy/JSD value | 0.033256257058337096 |This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated step distribution similarity to validation set step distribution.
-| Validation set duration accuracy/JSD value | 0.019707985584919215 |This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated duration distribution similarity to validation set duration distribution.
-| Test set pitch accuracy/JSD value | 0.13900275341415294 |This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated pitches distribution similarity to testing set pitch distribution.
+| Validation set duration accuracy/JSD value | 0.028733812443181905 |This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated duration distribution similarity to validation set duration distribution.
+| Test set pitch accuracy/JSD value | 0.13520244057363828 |This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated pitches distribution similarity to testing set pitch distribution.
 | Test set step accuracy/JSD value | 0.04077893880128644 |This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated step distribution similarity to testing set step distribution.
-| Test set duration accuracy/JSD value | 0.036794210566783475 | This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated duration distribution similarity to testing set duration distribution.
+| Test set duration accuracy/JSD value | 0.03461292270139919 | This value is bounded between 0 and 1. The closer to 0 the better. Measure of generated duration distribution similarity to testing set duration distribution.
 
 &nbsp; &nbsp; These quantitative results tell use the following. Firstly, from the "loss" value we can see that the model did not over fit to generating only examples from the training set as the loss values on both the validation and test set are similar to that seen on the training set, in fact they are even a little lower on these other sets which is ideal. We know the the model is not benefiting in these other sets from them having sequences from the same song appear in all three sets as we made sure to eliminate that possibility in the construction of our data sets by placing all sequences from one song in to one data set, as described in the above data section. We may note though that these loss values may be lower in the validation and testing sets as they are smaller, this may lead to the better losses on these sets even though they are averaged losses as the fewer examples leads to fewer possibilities for mistakes and thus lower losses. Overall the loss results seen on the test set is pretty good as it is similar to the other two losses, so the model is able to generalize well given this metric.
 
