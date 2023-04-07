@@ -1,5 +1,10 @@
 import pickle
 import matplotlib.pyplot as plt
+
+path_to_data = './data.pickle'
+
+# NOTE: Un comment the below lines if running on colab
+
 # from google.colab import drive
 
 # # Mount drive
@@ -7,10 +12,9 @@ import matplotlib.pyplot as plt
 # # UPDATE your path to the data
 # path_to_data = '/content/gdrive/My Drive/University/Year 4/CSC413/Project/data.pickle'
 
-path_to_data = './data.pickle'
-
+# Load the dataset
 with open(path_to_data, 'rb') as f:
-    dataset = pickle.load(f)
+  dataset = pickle.load(f)
 
 train_set, validation_set, test_set = dataset
 
@@ -33,7 +37,6 @@ test_step_histo = []
 
 step_histos = [train_step_histo, valid_step_histo, test_step_histo]
 
-
 train_dur_histo = []
 valid_dur_histo = [] 
 test_dur_histo = [] 
@@ -43,6 +46,7 @@ dur_histos = [train_dur_histo, valid_dur_histo, test_dur_histo]
 set_names = ["Training", "Validation", "Testing"]
 note_names = ["Pitch", "Step", "Duration"]
 all_histos = [pitch_histos, step_histos, dur_histos]
+
 for i, data_set in enumerate([train_set, validation_set, test_set]):
   for sequence in train_set:
     for note in sequence:
@@ -50,10 +54,11 @@ for i, data_set in enumerate([train_set, validation_set, test_set]):
       pitch_histos[i].append(int(pitch))
       step_histos[i].append(step)
       dur_histos[i].append(dur)
+  
   fig, ax = plt.subplots(1, len(note_names))
   for j, distro in enumerate(note_names):
-    # plt.subplot(1, len(note_names), j+1)
     ax[j].set_title(f"{set_names[i]} {distro} Distribution")
     ax[j].hist(all_histos[j][i])
+    
   fig.tight_layout(pad=0.5)
   plt.show()
