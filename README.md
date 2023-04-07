@@ -146,7 +146,7 @@ Notice, that though we split the validation and testing sets into equal sizes, t
 
 
 ## Hyper-parameters Tuning
-The hyper-parameters we settled on after many training runs that we ended up using for this model are:
+The hyper-parameters we settled on for training the final model described in above sections are listed below. These were decided upon after many training runs with this model and various other models.
 - `num_epochs=50`
   - The reason we used 50 epochs is due to the fact we found that if we went higher this model would start to over fit to the training dataset and the loss would grow quite high on the validation set. 
 - `batch_size=128`
@@ -156,7 +156,7 @@ The hyper-parameters we settled on after many training runs that we ended up usi
 
 
 ## Limiting The Dataset While Training
-&nbsp; &nbsp; While training on the dataset we limited the validation and training sets the the first 250 segments/sequences. The reason behind this decision is due to the fact that we found using more then 250 segments resulted in the model generating either notes that were random and seamed not to follow any kind of musical pattern or looped the exact same pitch indefinitely with only the step and duration varying depending on the temperature. However, if we used less segments then 250 we found that the model would overfit and start producing music that was nearly identical to the training dataset very quickly. Thus in training our model we only ended up using 250 segments from both the training and validation.
+&nbsp; &nbsp; While training the final model on the dataset we limited the validation and training sets the the first 250 segments/sequences. The reason behind this decision is due to the fact that we found using more then 250 segments resulted in the model generating either notes that were random and seamed not to follow any kind of musical pattern or looped the exact same pitch indefinitely with only the step and duration varying depending on the temperature. However, if we used less segments then 250 we found that the model would overfit and start producing music that was nearly identical to the training dataset very quickly. Thus in training our model we only ended up using 250 segments from both the training and validation.
 
 # Results
 &nbsp; &nbsp; In this section we will explain how we quantified our results, what results we obtained, and why we obtained the results we got. To begin we will first explain how we measured our results both quantitatively and qualitatively. To measure our results quantitatively we found this to be challenging as our model was generative, meaning it should produce output it had never seen. Moreover, it was generating music sequences which has multiple unique components. Both of these traits none of us have had experience with quantifying "goodness" of before. That said we ended up deciding on two types of measures.
