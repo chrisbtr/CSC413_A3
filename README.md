@@ -119,6 +119,14 @@ Using these we turned the data in the midi files from the dataset into the tenso
 
 &nbsp; &nbsp; We can see from the above histograms the the training, validation, and testing set have very similar distributions of step, pitch and, duration in their notes. This shows that our dataset is being split in a way that does not bias different values of notes between sets. Also note that the distributions for step and durations are both skewed to the left. This skew makes sense as it is very common for a note to have its step or duration less than 0 but there are still cases's were the a pitch is played far apart from each other (a larger step) and or held for a long time (a larger duration). 
 
+After splitting the data into the three datasets we had the following amount of sequences in each dataset 
+- Training set size: 3603
+- Validation set size: 997
+- Testing set size: 1214
+  - Total number of sequences: 5814
+
+Notice, that though we split the validation and testing sets into equal sizes, the testing set was larger. This was due to the fact that we split the sets based off of the number of songs and the songs in the testing set happened to have more length then those in the validation set but overall the percentage of sequences in each of these two sets to the total number of sequences was about the same.
+
 # Training
 
 ## The Training Leaning Curve
